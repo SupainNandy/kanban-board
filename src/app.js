@@ -16,7 +16,7 @@ app.use(cors(
   {
     origin: ["https://kanbanboard-two-beta.vercel.app",
       "http://localhost:3000",
-      
+
     ]
 
     
@@ -27,5 +27,13 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/boards", boardRoutes);
 app.use("/api/tasks", taskRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Backend Running");
+});
+
+app.get("/api/test", (req, res) => {
+  res.json({ success: true });
+});
 
 module.exports = app;
