@@ -14,7 +14,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: ["https://kanbanboard-two-beta.vercel.app",
+    origin: ["kanbanboard-xi.vercel.app",
       "http://localhost:3000",
 
     ]
