@@ -1,9 +1,9 @@
-const admin = require("firebase-admin");
+  const admin = require("firebase-admin");
 
-const serviceAccount = require('../kanban-board-eb784-firebase-adminsdk-fbsvc-76476fbadf.json');
+  const serviceAccount = require('../kanban-board-eb784-firebase-adminsdk-fbsvc-76476fbadf.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
 
-module.exports = admin;
+  module.exports = admin;
