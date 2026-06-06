@@ -12,17 +12,21 @@ const taskRoutes =
 
 const app = express();
 
-app.use(cors(
-  {
-    origin: ["kanbanboard-xi.vercel.app",
-      "http://localhost:3000",
+const cors = require("cors");
 
-    ]
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://kanbanboard-xi.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
-    
-  }
-));
+app.options("*", cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/boards", boardRoutes);
