@@ -1,4 +1,4 @@
-# 📋 Kanban Board — Task Management System
+# 📋 Kanban Board — Task Management System (Backend)
 
 A full-stack Kanban Board application designed to organize tasks, track progress, and manage workflows through a visual task-management interface. The project combines a modern web frontend with a Node.js backend, MongoDB for data persistence, and Socket.IO for real-time communication.
 
@@ -264,4 +264,5 @@ The server is configured to use port `5000` by default.
 
 Once the server starts, the backend will attempt to connect to MongoDB. Check your terminal for startup messages and any database connection errors.
 
-## 🔐 Security
+## 🔐 Frontend Part:
+github-repo-> https://github.com/SupainNandy/kanban-board-frontend
