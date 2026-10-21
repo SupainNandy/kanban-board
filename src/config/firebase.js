@@ -1,9 +1,25 @@
-  const admin = require("firebase-admin");
+const admin = require("firebase-admin");
 
-  const serviceAccount = require('../kanban-board-eb784-firebase-adminsdk-fbsvc-76476fbadf.json');
+const requiredConfig = [
+  "FIREBASE_PROJECT_ID",
+  "FIREBASE_CLIENT_EMAIL",
+  "FIREBASE_PRIVATE_KEY",
+];
 
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
+const missingConfig = requiredConfig.filter((name) => !process.env[name]);
 
-  module.exports = admin;
+if (missingConfig.length > 0) {
+  throw new Error(
+    `Missing Firebase configuration: ${missingConfig.join(", ")}`
+  );
+}
+
+admin.initializeApp({
+  credential: admin.credential.cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+  }),
+});
+
+module.exports = admin;
