@@ -1,2 +1,3 @@
 .env
 src/kanban-board-eb784-firebase-adminsdk-*.json
+node_modules/
