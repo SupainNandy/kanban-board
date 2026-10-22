@@ -1,3 +1,21 @@
 .env
-src/kanban-board-eb784-firebase-adminsdk-*.json
+.env.*
+!.env.example
+
+# Firebase Admin service-account credentials
+**/*firebase-adminsdk*.json
+**/*service-account*.json
+**/*service_account*.json
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+
 node_modules/
+dist/
+build/
+coverage/
